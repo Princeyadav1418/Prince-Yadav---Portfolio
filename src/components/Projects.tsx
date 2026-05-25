@@ -128,17 +128,19 @@ function ProjectCard({ project, index }: { project: ProjectItem, index: number }
         project.color
       )} />
 
-      <motion.div style={{ transform: "translateZ(50px)", transformStyle: "preserve-3d" }} className="relative z-20 flex-grow flex flex-col pointer-events-auto">
+      <motion.div style={{ transform: "translateZ(50px)", transformStyle: "preserve-3d" }} className="relative z-20 flex-grow flex flex-col pointer-events-auto pt-14 sm:pt-16">
         <div className="flex items-center justify-between mb-8">
           <div className={cn("text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full bg-white/5 border border-white/10 backdrop-blur-md", project.accent)}>
             {project.type}
           </div>
-          <div className="relative z-50 flex items-center gap-3 pointer-events-auto">
+        </div>
+        <div className="absolute top-6 right-6 z-[60] flex items-center gap-3 pointer-events-auto">
+          <div className="flex items-center gap-3 pointer-events-auto">
             <a
               href={project.github}
               aria-label={`Open ${project.title} GitHub repository`}
               className={cn(
-                "relative z-50 pointer-events-auto inline-flex w-12 h-12 rounded-full border items-center justify-center transition-all duration-300 backdrop-blur-md cursor-pointer touch-manipulation",
+                "relative z-[70] pointer-events-auto inline-flex w-12 h-12 rounded-full border items-center justify-center transition-all duration-300 backdrop-blur-md cursor-pointer touch-manipulation",
                 project.github && project.github !== '#'
                   ? "bg-black/50 border-white/10 text-white hover:bg-white hover:text-black hover:scale-105"
                   : "bg-black/20 border-white/5 text-white/30 cursor-not-allowed pointer-events-none"
@@ -150,7 +152,7 @@ function ProjectCard({ project, index }: { project: ProjectItem, index: number }
               href={project.link}
               aria-label={`Open ${project.title} live demo`}
               className={cn(
-                "relative z-50 pointer-events-auto inline-flex w-12 h-12 rounded-full items-center justify-center transition-all duration-300 shadow-lg cursor-pointer touch-manipulation",
+                "relative z-[70] pointer-events-auto inline-flex w-12 h-12 rounded-full items-center justify-center transition-all duration-300 shadow-lg cursor-pointer touch-manipulation",
                 project.link && project.link !== '#'
                   ? "bg-white text-black hover:bg-gray-200 hover:scale-105 active:scale-95"
                   : "bg-white/30 text-black/30 cursor-not-allowed pointer-events-none"
