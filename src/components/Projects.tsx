@@ -124,21 +124,21 @@ function ProjectCard({ project, index }: { project: ProjectItem, index: number }
       
       {/* Ambient Depth Gradient */}
       <div className={cn(
-        "absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 bg-gradient-to-br -z-10",
+        "absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 bg-gradient-to-br -z-10 pointer-events-none",
         project.color
       )} />
 
-      <motion.div style={{ transform: "translateZ(50px)", transformStyle: "preserve-3d" }} className="relative z-20 flex-grow flex flex-col">
+      <motion.div style={{ transform: "translateZ(50px)", transformStyle: "preserve-3d" }} className="relative z-20 flex-grow flex flex-col pointer-events-auto">
         <div className="flex items-center justify-between mb-8">
           <div className={cn("text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full bg-white/5 border border-white/10 backdrop-blur-md", project.accent)}>
             {project.type}
           </div>
-          <motion.div style={{ transform: "translateZ(30px)" }} className="relative z-50 flex items-center gap-3 pointer-events-auto">
+          <div className="relative z-50 flex items-center gap-3 pointer-events-auto">
             <a
               href={project.github}
               aria-label={`Open ${project.title} GitHub repository`}
               className={cn(
-                "relative z-30 pointer-events-auto inline-flex w-12 h-12 rounded-full border items-center justify-center transition-all duration-300 backdrop-blur-md cursor-pointer touch-manipulation",
+                "relative z-50 pointer-events-auto inline-flex w-12 h-12 rounded-full border items-center justify-center transition-all duration-300 backdrop-blur-md cursor-pointer touch-manipulation",
                 project.github && project.github !== '#'
                   ? "bg-black/50 border-white/10 text-white hover:bg-white hover:text-black hover:scale-105"
                   : "bg-black/20 border-white/5 text-white/30 cursor-not-allowed pointer-events-none"
@@ -150,7 +150,7 @@ function ProjectCard({ project, index }: { project: ProjectItem, index: number }
               href={project.link}
               aria-label={`Open ${project.title} live demo`}
               className={cn(
-                "relative z-30 pointer-events-auto inline-flex w-12 h-12 rounded-full items-center justify-center transition-all duration-300 shadow-lg cursor-pointer touch-manipulation",
+                "relative z-50 pointer-events-auto inline-flex w-12 h-12 rounded-full items-center justify-center transition-all duration-300 shadow-lg cursor-pointer touch-manipulation",
                 project.link && project.link !== '#'
                   ? "bg-white text-black hover:bg-gray-200 hover:scale-105 active:scale-95"
                   : "bg-white/30 text-black/30 cursor-not-allowed pointer-events-none"
@@ -158,7 +158,7 @@ function ProjectCard({ project, index }: { project: ProjectItem, index: number }
             >
               <ExternalLink className="w-5 h-5" />
             </a>
-          </motion.div>
+          </div>
         </div>
 
         <motion.h3 style={{ transform: "translateZ(80px)" }} className="font-display text-3xl sm:text-4xl font-bold text-white mb-4 tracking-tight drop-shadow-sm leading-[1.1]">
