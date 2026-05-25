@@ -103,7 +103,7 @@ function ProjectCard({ project, index }: { project: ProjectItem, index: number }
         transformStyle: "preserve-3d"
       }}
       className={cn(
-        "group relative flex flex-col p-6 sm:p-8 rounded-[2rem] border border-white/[0.15] bg-black/40 backdrop-blur-3xl overflow-hidden transition-all duration-700 shadow-[0_8px_32px_rgba(0,0,0,0.5)] hover:shadow-[0_16px_48px_rgba(0,0,0,0.8)] hover:-translate-y-2",
+        "group relative isolate flex flex-col p-6 sm:p-8 rounded-[2rem] border border-white/[0.15] bg-black/40 backdrop-blur-3xl overflow-hidden transition-all duration-700 shadow-[0_8px_32px_rgba(0,0,0,0.5)] hover:shadow-[0_16px_48px_rgba(0,0,0,0.8)] hover:-translate-y-2",
         "hover:z-50",
         project.border
       )}
@@ -128,12 +128,12 @@ function ProjectCard({ project, index }: { project: ProjectItem, index: number }
         project.color
       )} />
 
-      <motion.div style={{ transform: "translateZ(50px)", transformStyle: "preserve-3d" }} className="relative z-10 flex-grow flex flex-col">
+      <motion.div style={{ transform: "translateZ(50px)", transformStyle: "preserve-3d" }} className="relative z-20 flex-grow flex flex-col">
         <div className="flex items-center justify-between mb-8">
           <div className={cn("text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full bg-white/5 border border-white/10 backdrop-blur-md", project.accent)}>
             {project.type}
           </div>
-          <motion.div style={{ transform: "translateZ(30px)" }} className="relative z-30 flex items-center gap-3 pointer-events-auto">
+          <motion.div style={{ transform: "translateZ(30px)" }} className="relative z-50 flex items-center gap-3 pointer-events-auto">
             <a href={project.github} target="_blank" rel="noopener noreferrer" className="relative z-30 pointer-events-auto inline-flex w-12 h-12 rounded-full bg-black/50 border border-white/10 items-center justify-center hover:bg-white hover:text-black transition-all duration-300 text-white backdrop-blur-md cursor-pointer">
               <Github className="w-5 h-5" />
             </a>
