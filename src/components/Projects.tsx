@@ -46,8 +46,8 @@ const projects: ProjectItem[] = [
     type: "Cinematic Visual Narrative",
     description: "Conceptualized a cinematic engineering storytelling series exploring student life, ambition, struggles, and growth through immersive visual narratives and branding.",
     tech: ["Creative Direction", "Storyboarding", "Cinematic Editing", "Branding"],
-    link: "#",
-    github: "#",
+    link: "https://engineering-paradox.vercel.app/",
+    github: "https://github.com/Princeyadav1418/engineering-paradox",
     color: "from-zinc-600/20 via-gray-600/10 to-slate-600/20",
     accent: "text-gray-300",
     border: "group-hover:border-white/5"
