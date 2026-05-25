@@ -45,16 +45,16 @@ export default function Contact() {
           </p>
           
           <div className="flex flex-wrap items-center gap-4">
-            <a href="https://github.com/princeyadav" className="w-14 h-14 rounded-full bg-black/50 border border-white/10 flex items-center justify-center hover:bg-white hover:text-black hover:scale-110 transition-all duration-300 text-white backdrop-blur-md shadow-lg shadow-black/20">
+            <a href="https://github.com/Princeyadav1418" target="_blank" rel="noopener noreferrer" className="w-14 h-14 rounded-full bg-black/50 border border-white/10 flex items-center justify-center hover:bg-white hover:text-black hover:scale-110 transition-all duration-300 text-white backdrop-blur-md shadow-lg shadow-black/20">
               <Github className="w-6 h-6" />
             </a>
-            <a href="https://linkedin.com/in/princeyadav" className="w-14 h-14 rounded-full bg-black/50 border border-white/10 flex items-center justify-center hover:bg-[#0A66C2] hover:border-[#0A66C2] hover:scale-110 transition-all duration-300 text-white backdrop-blur-md shadow-lg shadow-black/20">
+            <a href="https://www.linkedin.com/in/princeyadav1418" target="_blank" rel="noopener noreferrer" className="w-14 h-14 rounded-full bg-black/50 border border-white/10 flex items-center justify-center hover:bg-[#0A66C2] hover:border-[#0A66C2] hover:scale-110 transition-all duration-300 text-white backdrop-blur-md shadow-lg shadow-black/20">
               <Linkedin className="w-6 h-6" />
             </a>
-            <a href="mailto:princeyadav.18112003@gmail.com" className="w-14 h-14 rounded-full bg-black/50 border border-white/10 flex items-center justify-center hover:bg-indigo-500 hover:border-indigo-500 hover:scale-110 transition-all duration-300 text-white backdrop-blur-md shadow-lg shadow-black/20">
+            <a href="mailto:princeyadav.181103@gmail.com" className="w-14 h-14 rounded-full bg-black/50 border border-white/10 flex items-center justify-center hover:bg-indigo-500 hover:border-indigo-500 hover:scale-110 transition-all duration-300 text-white backdrop-blur-md shadow-lg shadow-black/20">
               <Mail className="w-6 h-6" />
             </a>
-            <a href="https://instagram.com" className="w-14 h-14 rounded-full bg-black/50 border border-white/10 flex items-center justify-center hover:bg-gradient-to-tr hover:from-yellow-400 hover:via-pink-500 hover:to-purple-600 hover:border-transparent hover:scale-110 transition-all duration-300 text-white backdrop-blur-md shadow-lg shadow-black/20">
+            <a href="https://www.instagram.com/prince.yadav.18/" target="_blank" rel="noopener noreferrer" className="w-14 h-14 rounded-full bg-black/50 border border-white/10 flex items-center justify-center hover:bg-gradient-to-tr hover:from-yellow-400 hover:via-pink-500 hover:to-purple-600 hover:border-transparent hover:scale-110 transition-all duration-300 text-white backdrop-blur-md shadow-lg shadow-black/20">
               <Instagram className="w-6 h-6" />
             </a>
           </div>

@@ -94,7 +94,7 @@ export default function Hero() {
             <Terminal className="w-4 h-4" />
             Explore Projects
           </a>
-          <a href="#" className="group relative inline-flex items-center justify-center gap-3 px-8 py-4 bg-black/40 text-white border border-white/10 rounded-full font-semibold tracking-wide hover:bg-white/10 hover:border-white/30 backdrop-blur-xl transition-all duration-300 hover:scale-105 active:scale-95">
+          <a href="#contact" className="group relative inline-flex items-center justify-center gap-3 px-8 py-4 bg-black/40 text-white border border-white/10 rounded-full font-semibold tracking-wide hover:bg-white/10 hover:border-white/30 backdrop-blur-xl transition-all duration-300 hover:scale-105 active:scale-95">
             Download Resume
             <Download className="w-4 h-4 group-hover:-translate-y-1 transition-transform" />
           </a>
@@ -107,16 +107,16 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
         >
-          <a href="https://github.com/princeyadav" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center text-gray-300 hover:text-white hover:border-white/30 hover:bg-white/5 transition-all duration-300 hover:scale-110 active:scale-95">
+          <a href="https://github.com/Princeyadav1418" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center text-gray-300 hover:text-white hover:border-white/30 hover:bg-white/5 transition-all duration-300 hover:scale-110 active:scale-95">
             <Github className="w-5 h-5" />
           </a>
-          <a href="https://linkedin.com/in/princeyadav" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center text-gray-300 hover:text-white hover:border-white/30 hover:bg-white/5 transition-all duration-300 hover:scale-110 active:scale-95">
+          <a href="https://www.linkedin.com/in/princeyadav1418" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center text-gray-300 hover:text-white hover:border-white/30 hover:bg-white/5 transition-all duration-300 hover:scale-110 active:scale-95">
             <Linkedin className="w-5 h-5" />
           </a>
-          <a href="mailto:princeyadav.18112003@gmail.com" className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center text-gray-300 hover:text-white hover:border-white/30 hover:bg-white/5 transition-all duration-300 hover:scale-110 active:scale-95">
+          <a href="mailto:princeyadav.181103@gmail.com" className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center text-gray-300 hover:text-white hover:border-white/30 hover:bg-white/5 transition-all duration-300 hover:scale-110 active:scale-95">
             <Mail className="w-5 h-5" />
           </a>
-          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center text-gray-300 hover:text-white hover:border-white/30 hover:bg-white/5 transition-all duration-300 hover:scale-110 active:scale-95">
+          <a href="https://www.instagram.com/prince.yadav.18/" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center text-gray-300 hover:text-white hover:border-white/30 hover:bg-white/5 transition-all duration-300 hover:scale-110 active:scale-95">
             <Instagram className="w-5 h-5" />
           </a>
         </motion.div>

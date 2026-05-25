@@ -65,7 +65,7 @@ export default function Navbar() {
             scrolled ? "bg-black/50 backdrop-blur-xl border border-white/10 shadow-[0_8px_30px_rgb(0,0,0,0.4)]" : "bg-transparent border-transparent"
           )}
         >
-          <a href="#" className="font-display font-bold text-2xl text-white tracking-tighter drop-shadow-md">
+          <a href="#home" className="font-display font-bold text-2xl text-white tracking-tighter drop-shadow-md">
             PRINCE<span className="text-gray-500 font-medium">.DEV</span>
           </a>
 
