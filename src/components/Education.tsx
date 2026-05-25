@@ -1,8 +1,9 @@
 import { motion } from 'motion/react';
 import { GraduationCap } from 'lucide-react';
 
-const educationList = [
+const educationList: EducationItem[] = [
   {
+    id: 'dtu-btech',
     institution: "Delhi Technological University",
     degree: "Bachelor of Technology",
     branch: "Electronics and Communication Engineering",
@@ -10,6 +11,7 @@ const educationList = [
     logo: "DTU"
   },
   {
+    id: 'cbse-xii',
     institution: "Central Board of Secondary Education",
     degree: "Class XII (Senior Secondary)",
     branch: "Science Stream",
@@ -17,6 +19,7 @@ const educationList = [
     logo: "XII"
   },
   {
+    id: 'cbse-x',
     institution: "Central Board of Secondary Education",
     degree: "Class X (Secondary)",
     branch: "General Academics",
@@ -24,6 +27,15 @@ const educationList = [
     logo: "X"
   }
 ];
+
+interface EducationItem {
+  id: string;
+  institution: string;
+  degree: string;
+  branch: string;
+  score: string;
+  logo: string;
+}
 
 export default function Education() {
   return (
@@ -53,7 +65,7 @@ export default function Education() {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
         {educationList.map((edu, i) => (
           <motion.div
-            key={i}
+            key={edu.id}
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}

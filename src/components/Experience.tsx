@@ -3,8 +3,9 @@ import { Briefcase, Trophy, Sparkles, Building2 } from 'lucide-react';
 import { MouseEvent, useRef } from 'react';
 import { cn } from '../lib/utils';
 
-const experiences = [
+const experiences: ExperienceItem[] = [
   {
+    id: 'innovate-tech',
     role: "InnovateTech Media Internship",
     type: "Professional Experience",
     period: "Past",
@@ -12,6 +13,7 @@ const experiences = [
     description: "Gained hands-on professional experience contributing to dynamic environments, collaborating with cross-functional teams to deliver impactful digital media solutions and technical implementations."
   },
   {
+    id: 'nss-leadership',
     role: "National Service Scheme Leadership",
     type: "Leadership & Strategy",
     period: "Ongoing",
@@ -19,6 +21,7 @@ const experiences = [
     description: "Spearheaded numerous initiatives emphasizing team coordination, project execution, and community impact. Managed massive logistics and volunteer networks, proving capability beyond just code."
   },
   {
+    id: 'smart-india-hackathon',
     role: "Smart India Hackathon",
     type: "Competitive Engineering",
     period: "Milestone",
@@ -26,6 +29,7 @@ const experiences = [
     description: "Participated in rigorous, fast-paced development environments. Architected and deployed solutions under extreme time constraints, validating my ability to build rapidly and scalably."
   },
   {
+    id: 'creative-leadership',
     role: "Creative Leadership & Branding",
     type: "Creative Vision",
     period: "Ongoing",
@@ -34,7 +38,18 @@ const experiences = [
   }
 ];
 
-function ExperienceCard({ exp, index }: { exp: any, index: number }) {
+type IconType = (props: React.SVGProps<SVGSVGElement>) => JSX.Element;
+
+interface ExperienceItem {
+  id: string;
+  role: string;
+  type: string;
+  period: string;
+  icon: IconType;
+  description: string;
+}
+
+function ExperienceCard({ exp, index }: { exp: ExperienceItem, index: number }) {
   const cardRef = useRef<HTMLDivElement>(null);
   let mouseX = useMotionValue(0);
   let mouseY = useMotionValue(0);
@@ -142,9 +157,9 @@ export default function Experience() {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10 perspective-1000">
-        {experiences.map((exp, i) => (
-           <ExperienceCard key={i} exp={exp} index={i} />
-        ))}
+          {experiences.map((exp, i) => (
+            <ExperienceCard key={exp.id} exp={exp} index={i} />
+          ))}
       </div>
     </section>
   );

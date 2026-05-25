@@ -2,8 +2,9 @@ import { motion } from 'motion/react';
 import { cn } from '../lib/utils';
 import { Terminal, Database, Palette, Code2 } from 'lucide-react';
 
-const categories = [
+const categories: Category[] = [
   {
+    id: 'vibe-coding-ai',
     title: "Vibe Coding & AI",
     icon: Terminal,
     skills: ["Antigravity", "Codex", "Google AI Studio", "Cursor", "Prompt Engineering", "AI Graphic & Video Generation"],
@@ -12,6 +13,7 @@ const categories = [
     iconColor: "text-indigo-400"
   },
   {
+    id: 'frontend-design',
     title: "Frontend & Design Engineering",
     icon: Code2,
     skills: ["HTML5 & CSS3", "Next.js", "React", "Tailwind CSS", "UI/UX Design", "Typography"],
@@ -20,6 +22,7 @@ const categories = [
     iconColor: "text-blue-400"
   },
   {
+    id: 'backend-apis',
     title: "Backend Services & APIs",
     icon: Database,
     skills: ["Authentication", "API Integration", "Firebase", "Supabase", "PostgreSQL", "Environment Configuration"],
@@ -28,6 +31,7 @@ const categories = [
     iconColor: "text-emerald-400"
   },
   {
+    id: 'creative-visuals',
     title: "Creative Visuals",
     icon: Palette,
     skills: ["Figma", "Canva", "DaVinci Resolve", "Cinematic Editing"],
@@ -36,6 +40,16 @@ const categories = [
     iconColor: "text-fuchsia-400"
   }
 ];
+
+interface Category {
+  id: string;
+  title: string;
+  icon: (props: React.SVGProps<SVGSVGElement>) => JSX.Element;
+  skills: string[];
+  color: string;
+  border: string;
+  iconColor: string;
+}
 
 export default function Skills() {
   return (
@@ -75,7 +89,7 @@ export default function Skills() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
         {categories.map((cat, i) => (
           <motion.div
-            key={i}
+            key={cat.id}
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
@@ -101,9 +115,9 @@ export default function Skills() {
             </div>
             
             <div className="flex flex-wrap gap-3">
-              {cat.skills.map((skill, idx) => (
+              {cat.skills.map((skill) => (
                 <motion.div
-                  key={idx}
+                  key={skill}
                   whileHover={{ scale: 1.05, y: -2 }}
                   className="px-5 py-2.5 bg-black/50 border border-white/10 rounded-full text-gray-200 text-sm font-medium backdrop-blur-xl shadow-lg hover:border-white/30 transition-all duration-300 cursor-default"
                 >

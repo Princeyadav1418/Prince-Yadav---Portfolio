@@ -31,13 +31,13 @@ export default function About() {
 
         <div className="w-full lg:w-1/2 grid grid-cols-2 gap-4 sm:gap-6">
           {[
-            { icon: Terminal, title: "System Architecture", desc: "Connecting secure APIs, authentication workflows, and modern cloud databases." },
-            { icon: Palette, title: "UI/UX", desc: "Cinematic, motion-driven interactive interfaces built with HTML, CSS, and modern frameworks." },
-            { icon: Cpu, title: "AI Integration", desc: "Intelligent workflows, rapid UI generation, and LLM implementations." },
-            { icon: Server, title: "Cloud Ops", desc: "Deployed, secure, and production-ready environments with structured environment variables." }
+            { id: 'system-architecture', icon: Terminal, title: "System Architecture", desc: "Connecting secure APIs, authentication workflows, and modern cloud databases." },
+            { id: 'ui-ux', icon: Palette, title: "UI/UX", desc: "Cinematic, motion-driven interactive interfaces built with HTML, CSS, and modern frameworks." },
+            { id: 'ai-integration', icon: Cpu, title: "AI Integration", desc: "Intelligent workflows, rapid UI generation, and LLM implementations." },
+            { id: 'cloud-ops', icon: Server, title: "Cloud Ops", desc: "Deployed, secure, and production-ready environments with structured environment variables." }
           ].map((item, i) => (
             <motion.div
-              key={i}
+              key={item.id}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}

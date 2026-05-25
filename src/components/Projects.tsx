@@ -3,8 +3,9 @@ import { ExternalLink, Github, ArrowRight } from 'lucide-react';
 import { cn } from '../lib/utils';
 import { MouseEvent, useRef } from 'react';
 
-const projects = [
+const projects: ProjectItem[] = [
   {
+    id: 'ecommerce-admin-os',
     title: "Ecommerce Admin Operating System",
     type: "Enterprise Administration Platform",
     description: "Built a production-grade ecommerce administration platform with secure authentication, dashboard analytics, role-based management, modern user interface systems, cloud deployment, and scalable backend architecture.",
@@ -16,6 +17,7 @@ const projects = [
     border: "group-hover:border-white/5"
   },
   {
+    id: 'qr-ticketing',
     title: "QR Based Realtime Ticketing Platform",
     type: "Scalable Event Infrastructure",
     description: "Developed a realtime QR-based ticket booking and validation system with automated QR generation, scalable booking workflows, and chatbot-integrated ticket management infrastructure.",
@@ -27,6 +29,7 @@ const projects = [
     border: "group-hover:border-white/5"
   },
   {
+    id: 'ai-resume-analyzer',
     title: "Artificial Intelligence Resume Analyzer",
     type: "AI-Powered Tooling",
     description: "Created an intelligent resume evaluation platform capable of analyzing resumes, optimizing content structure, and generating recruiter-focused improvement suggestions.",
@@ -38,6 +41,7 @@ const projects = [
     border: "group-hover:border-white/5"
   },
   {
+    id: 'usonly-fullstack',
     title: "USONLY Full Stack Platform",
     type: "Cloud Deployed Application",
     description: "Engineered a scalable full-stack platform integrating realtime database operations, deployment infrastructure, cloud workflows, and responsive frontend architecture.",
@@ -49,6 +53,7 @@ const projects = [
     border: "group-hover:border-white/5"
   },
   {
+    id: 'engineering-paradox',
     title: "Engineering Paradox",
     type: "Cinematic Visual Narrative",
     description: "Conceptualized a cinematic engineering storytelling series exploring student life, ambition, struggles, and growth through immersive visual narratives and branding.",
@@ -61,7 +66,20 @@ const projects = [
   }
 ];
 
-function ProjectCard({ project, index }: { project: any, index: number }) {
+interface ProjectItem {
+  id: string;
+  title: string;
+  type: string;
+  description: string;
+  tech: string[];
+  link: string;
+  github: string;
+  color: string;
+  accent: string;
+  border: string;
+}
+
+function ProjectCard({ project, index }: { project: ProjectItem, index: number }) {
   const cardRef = useRef<HTMLDivElement>(null);
   let mouseX = useMotionValue(0);
   let mouseY = useMotionValue(0);
@@ -147,8 +165,8 @@ function ProjectCard({ project, index }: { project: any, index: number }) {
 
         <motion.div style={{ transform: "translateZ(60px)" }} className="mt-auto">
           <div className="flex flex-wrap gap-3">
-            {project.tech.map((t: string, idx: number) => (
-              <span key={idx} className="px-4 py-2 text-sm font-medium text-gray-300 bg-white/5 border border-white/10 rounded-full backdrop-blur-md hover:bg-white/10 transition-colors cursor-default">
+            {project.tech.map((t: string) => (
+              <span key={t} className="px-4 py-2 text-sm font-medium text-gray-300 bg-white/5 border border-white/10 rounded-full backdrop-blur-md hover:bg-white/10 transition-colors cursor-default">
                 {t}
               </span>
             ))}
@@ -197,7 +215,7 @@ export default function Projects() {
 
       <div className="flex flex-col gap-10">
         {projects.map((project, i) => (
-          <ProjectCard key={i} project={project} index={i} />
+          <ProjectCard key={project.id} project={project} index={i} />
         ))}
       </div>
     </section>
