@@ -134,10 +134,28 @@ function ProjectCard({ project, index }: { project: ProjectItem, index: number }
             {project.type}
           </div>
           <motion.div style={{ transform: "translateZ(30px)" }} className="relative z-50 flex items-center gap-3 pointer-events-auto">
-            <a href={project.github} target="_blank" rel="noopener noreferrer" className="relative z-30 pointer-events-auto inline-flex w-12 h-12 rounded-full bg-black/50 border border-white/10 items-center justify-center hover:bg-white hover:text-black transition-all duration-300 text-white backdrop-blur-md cursor-pointer">
+            <a
+              href={project.github}
+              aria-label={`Open ${project.title} GitHub repository`}
+              className={cn(
+                "relative z-30 pointer-events-auto inline-flex w-12 h-12 rounded-full border items-center justify-center transition-all duration-300 backdrop-blur-md cursor-pointer touch-manipulation",
+                project.github && project.github !== '#'
+                  ? "bg-black/50 border-white/10 text-white hover:bg-white hover:text-black hover:scale-105"
+                  : "bg-black/20 border-white/5 text-white/30 cursor-not-allowed pointer-events-none"
+              )}
+            >
               <Github className="w-5 h-5" />
             </a>
-            <a href={project.link} target="_blank" rel="noopener noreferrer" className="relative z-30 pointer-events-auto inline-flex w-12 h-12 rounded-full bg-white text-black items-center justify-center hover:bg-gray-200 transition-all duration-300 shadow-lg hover:scale-105 active:scale-95 cursor-pointer">
+            <a
+              href={project.link}
+              aria-label={`Open ${project.title} live demo`}
+              className={cn(
+                "relative z-30 pointer-events-auto inline-flex w-12 h-12 rounded-full items-center justify-center transition-all duration-300 shadow-lg cursor-pointer touch-manipulation",
+                project.link && project.link !== '#'
+                  ? "bg-white text-black hover:bg-gray-200 hover:scale-105 active:scale-95"
+                  : "bg-white/30 text-black/30 cursor-not-allowed pointer-events-none"
+              )}
+            >
               <ExternalLink className="w-5 h-5" />
             </a>
           </motion.div>
