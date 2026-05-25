@@ -2,6 +2,8 @@ import { motion, useSpring, useTransform, useMotionValue } from 'motion/react';
 import { ArrowRight, Download, Terminal, Github, Linkedin, Mail, Instagram } from 'lucide-react';
 import { useEffect } from 'react';
 
+const resumeUrl = new URL('../../Prince Yadav Resume.pdf', import.meta.url).href;
+
 export default function Hero() {
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
@@ -94,8 +96,8 @@ export default function Hero() {
             <Terminal className="w-4 h-4" />
             Explore Projects
           </a>
-          <a href="#contact" className="group relative inline-flex items-center justify-center gap-3 px-8 py-4 bg-black/40 text-white border border-white/10 rounded-full font-semibold tracking-wide hover:bg-white/10 hover:border-white/30 backdrop-blur-xl transition-all duration-300 hover:scale-105 active:scale-95">
-            Download Resume
+          <a href={resumeUrl} download="Prince-Yadav-Resume.pdf" className="group relative inline-flex items-center justify-center gap-3 px-8 py-4 bg-black/40 text-white border border-white/10 rounded-full font-semibold tracking-wide hover:bg-white/10 hover:border-white/30 backdrop-blur-xl transition-all duration-300 hover:scale-105 active:scale-95">
+            Get Resume
             <Download className="w-4 h-4 group-hover:-translate-y-1 transition-transform" />
           </a>
         </motion.div>

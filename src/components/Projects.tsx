@@ -133,11 +133,11 @@ function ProjectCard({ project, index }: { project: ProjectItem, index: number }
           <div className={cn("text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full bg-white/5 border border-white/10 backdrop-blur-md", project.accent)}>
             {project.type}
           </div>
-          <motion.div style={{ transform: "translateZ(30px)" }} className="flex items-center gap-3">
-            <a href={project.github} className="w-12 h-12 rounded-full bg-black/50 border border-white/10 flex items-center justify-center hover:bg-white hover:text-black transition-all duration-300 text-white backdrop-blur-md">
+          <motion.div style={{ transform: "translateZ(30px)" }} className="relative z-30 flex items-center gap-3 pointer-events-auto">
+            <a href={project.github} target="_blank" rel="noopener noreferrer" className="relative z-30 pointer-events-auto inline-flex w-12 h-12 rounded-full bg-black/50 border border-white/10 items-center justify-center hover:bg-white hover:text-black transition-all duration-300 text-white backdrop-blur-md cursor-pointer">
               <Github className="w-5 h-5" />
             </a>
-            <a href={project.link} className="w-12 h-12 rounded-full bg-white text-black flex items-center justify-center hover:bg-gray-200 transition-all duration-300 shadow-lg hover:scale-105 active:scale-95">
+            <a href={project.link} target="_blank" rel="noopener noreferrer" className="relative z-30 pointer-events-auto inline-flex w-12 h-12 rounded-full bg-white text-black items-center justify-center hover:bg-gray-200 transition-all duration-300 shadow-lg hover:scale-105 active:scale-95 cursor-pointer">
               <ExternalLink className="w-5 h-5" />
             </a>
           </motion.div>
