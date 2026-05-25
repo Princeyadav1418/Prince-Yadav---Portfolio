@@ -38,7 +38,7 @@ const experiences: ExperienceItem[] = [
   }
 ];
 
-type IconType = (props: React.SVGProps<SVGSVGElement>) => JSX.Element;
+type IconType = React.ComponentType<React.SVGProps<SVGSVGElement>>;
 
 interface ExperienceItem {
   id: string;

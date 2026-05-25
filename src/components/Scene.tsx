@@ -1,9 +1,16 @@
-import { Canvas } from '@react-three/fiber';
-import { MeshDistortMaterial, Sphere, Float, Stars, Environment, PerspectiveCamera } from '@react-three/drei';
 import { Suspense, useEffect, useState } from 'react';
 
 export default function Scene() {
   const [isLightMode, setIsLightMode] = useState(false);
+  const [ThreeLoaded, setThreeLoaded] = useState<null | {
+    Canvas: any;
+    PerspectiveCamera: any;
+    Float: any;
+    Sphere: any;
+    MeshDistortMaterial: any;
+    Stars: any;
+    Environment: any;
+  }>(null);
 
   useEffect(() => {
     const observer = new MutationObserver(() => {
@@ -11,8 +18,36 @@ export default function Scene() {
     });
     observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
     setIsLightMode(document.documentElement.classList.contains('light-mode'));
-    return () => observer.disconnect();
+
+    // Dynamically import heavy 3D libraries to split chunks further
+    let mounted = true;
+    Promise.all([
+      import('@react-three/fiber'),
+      import('@react-three/drei')
+    ]).then(([fiber, drei]) => {
+      if (!mounted) return;
+      setThreeLoaded({
+        Canvas: fiber.Canvas,
+        PerspectiveCamera: drei.PerspectiveCamera,
+        Float: drei.Float,
+        Sphere: drei.Sphere,
+        MeshDistortMaterial: drei.MeshDistortMaterial,
+        Stars: drei.Stars,
+        Environment: drei.Environment
+      });
+    }).catch(() => {
+      // ignore load errors; Scene will remain empty
+    });
+
+    return () => {
+      mounted = false;
+      observer.disconnect();
+    };
   }, []);
+
+  if (!ThreeLoaded) return null;
+
+  const { Canvas, PerspectiveCamera, Float, Sphere, MeshDistortMaterial, Stars, Environment } = ThreeLoaded;
 
   return (
     <div className="fixed inset-0 w-screen h-screen overflow-hidden z-0 pointer-events-none">

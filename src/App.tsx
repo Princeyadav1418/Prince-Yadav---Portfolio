@@ -8,14 +8,17 @@ import Education from './components/Education';
 import Vision from './components/Vision';
 import Contact from './components/Contact';
 import SmoothScroll from './components/SmoothScroll';
-import Scene from './components/Scene';
+import { Suspense, lazy } from 'react';
+const Scene = lazy(() => import('./components/Scene'));
 
 export default function App() {
   return (
     <SmoothScroll>
       <div className="relative min-h-screen selection:bg-indigo-500/30 overflow-hidden">
-        {/* Fullscreen 3D interactive background */}
-        <Scene />
+        {/* Fullscreen 3D interactive background (lazy-loaded) */}
+        <Suspense fallback={null}>
+          <Scene />
+        </Suspense>
         
         {/* Navigation Layer */}
         <Navbar />

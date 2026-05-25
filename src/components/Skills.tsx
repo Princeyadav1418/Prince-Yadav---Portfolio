@@ -44,7 +44,7 @@ const categories: Category[] = [
 interface Category {
   id: string;
   title: string;
-  icon: (props: React.SVGProps<SVGSVGElement>) => JSX.Element;
+  icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
   skills: string[];
   color: string;
   border: string;
